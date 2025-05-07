@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body style="background-color: #121212; color: white; font-family: Arial; padding: 20px;">
+<h2>Pending Services for Approval</h2>
+<a href="/" style="color: #bb86fc;">Back to Home</a><br><br>
+{% for i, s in enumerate(pending) %}
+    <div style="background-color: #1f1f1f; padding: 10px; margin-bottom: 10px;">
+        <strong>{{ s.name }}</strong> - {{ s.title }}<br>
+        <small>{{ s.description }}</small><br>
+        <a href="/approve/{{ i }}" style="color: #03dac6;">Approve</a>
+    </div>
+{% else %}
+    <p>No services pending.</p>
+{% endfor %}
+</body>
+</html>
