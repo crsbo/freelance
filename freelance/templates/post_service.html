@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}نشر خدمة{% endblock %}
+{% block content %}
+<h2>نشر خدمة جديدة</h2>
+<form method="post">
+    الاسم: <input type="text" name="name"><br>
+    نوع الخدمة: <input type="text" name="service_type"><br>
+    وصف الخدمة: <textarea name="description"></textarea><br>
+    رقم الواتساب: <input type="text" name="whatsapp"><br>
+    <input type="submit" value="نشر">
+</form>
+{% endblock %}
