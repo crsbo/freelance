@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Available Services</title></head>
+<body style="background-color: #121212; color: white; font-family: Arial; padding: 20px;">
+<h2>Welcome {{ user }}!</h2>
+{% if admin %}
+    <a href="/admin" style="color: #03dac6;">Go to Admin Dashboard</a><br><br>
+{% endif %}
+<a href="/post" style="color: #bb86fc;">Post a New Service</a> | <a href="/logout" style="color: red;">Logout</a>
+<hr>
+<h3>Approved Services:</h3>
+{% for s in services %}
+    <div style="background-color: #1f1f1f; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+        <strong>{{ s.name }}</strong> - {{ s.title }}<br>
+        <strong>Price:</strong> ${{ s.price }}<br>
+        <small>{{ s.description }}</small><br>
+        <a href="https://wa.me/{{ s.whatsapp }}" style="color: #03dac6;">Contact on WhatsApp</a>
+    </div>
+{% endfor %}
+</body>
+</html>
